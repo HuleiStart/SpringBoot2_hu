@@ -17,4 +17,5 @@ public class WebConfig {
         methodFilter.setMethodParam("_cupid");
         return methodFilter;
     }
+
 }

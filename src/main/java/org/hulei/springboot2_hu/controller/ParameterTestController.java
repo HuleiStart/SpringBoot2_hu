@@ -1,5 +1,6 @@
 package org.hulei.springboot2_hu.controller;
 
+import org.hulei.springboot2_hu.bean.Person;
 import org.springframework.web.bind.annotation.*;
 import sun.management.Agent;
 import sun.management.resources.agent;
@@ -15,6 +16,17 @@ import java.util.Map;
  */
 @RestController
 public class ParameterTestController {
+
+    /**
+     * 数据绑定，页面提交的请求数据（POST，GET）都可以喝对象属性进行绑定
+     * @param person
+     * @return
+     */
+    @PostMapping("/saveuser")
+    public Person saveuser(Person person){
+        return person;
+    }
+
     @GetMapping("/car/{id}/owner/{username}")
     public Map<String,Object> getCar(@PathVariable("id") Integer id,
                                      @PathVariable("username") String name,
