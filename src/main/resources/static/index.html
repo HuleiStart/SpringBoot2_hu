@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello!</title>
+</head>
+<body>
+<h1>Hello!</h1>
+<!--访问默认index页面，不能设置访问前缀-->
+测试REST风格:
+<form action="/user" method="get">
+    <input value="REST-GET 提交" type="submit"/>
+</form>
+<form action="/user" method="post">
+    <input value="REST-POST 提交" type="submit"/>
+</form>
+<form action="/user" method="post">
+    <input name="_cupid" type="hidden" value="DELETE"/>
+    <input value="REST-DELETE 提交" type="submit"/>
+</form>
+<form action="/user" method="post">
+    <input name="_cupid" type="hidden" value="PUT"/>
+    <input value="REST-PUT 提交" type="submit"/>
+</form>
+
+<hr/>
+测试基本注解：<br/>
+<ul>
+    <a href="/car/3/owner/hu?age=22&inters=Java&inters=game&girlfriend=luoyan">/car/{id}/owner/{username}</a>
+    <li>@PathVariable(路径变量）</li>
+    <li>@RequestHeader(获取请求头)</li>
+    <li>@RequestParam(获取请求参数)</li>
+    <li>@CookieValue(获取Cookie值)</li>
+    <li>@RequestAttribute(获取request域属性值)</li>
+    <li>@RequestBody(获取请求体)</li>
+    <li>@MatrixVariable(矩阵变量)</li>
+</ul>
+<a href="/cars/sell;low=34;brand=byd,audi,yd">@MatrixVariable(矩阵变量）</a>
+<a href="/cars/sell;low=34;brand=byd；brand=audi;brand=yd">@MatrixVariable(矩阵变量）</a>
+<a href="/boss/1;age=20/2;age=10">@MatrixVariable(矩阵变量)/boss/{bossId}/{empId}</a>
+<br/>
+<form action="/save" method="post">
+    测试@RequestBody获取资源<br/>
+    用户名：<input name="userName"/>
+    邮箱：<input name="email"/>
+    <input type="submit" value="提交"/>
+</form>
+
+</body>
+</html>
